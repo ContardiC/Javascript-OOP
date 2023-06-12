@@ -1,5 +1,5 @@
 /*
-this file is not an application but a collection of exercises, 
+NOTICE: this file is not an application but a collection of exercises, 
 the variable names are deliberately duplicated to respect the 
 succession of FreeCodeCamp exercises
 */
