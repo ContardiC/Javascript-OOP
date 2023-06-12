@@ -1,9 +1,9 @@
 let dog = {
-  name: "Spot",
-  numLegs: 4,
-  sayLegs: function(){ 
-    return "This dog has "+ dog.numLegs + " legs."
-  }
+    name: "Spot",
+    numLegs: 4,
+    sayLegs: function () {
+        return "This dog has " + dog.numLegs + " legs."
+    }
 
 };
 
@@ -19,9 +19,9 @@ In case the name of the object changes the method will work without problems.
 */
 
 let dog2 = {
-  name: "Spot",
-  numLegs: 4,
-  sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
+    name: "Spot",
+    numLegs: 4,
+    sayLegs: function () { return "This dog has " + this.numLegs + " legs."; }
 };
 
 dog2.sayLegs();
@@ -29,9 +29,39 @@ dog2.sayLegs();
 // constructor
 
 function Dog() {
-  this.name = "Rupert";
-  this.color = "brown";
-  this.numLegs = 4;
+    this.name = "Rupert";
+    this.color = "brown";
+    this.numLegs = 4;
 }
 
 let hound = new Dog();
+
+function Dog(name, color) {
+    this.name = name;
+    this.color = color;
+    this.numLegs = 4;
+}
+let terrier = new Dog("GinoCane", "black");
+
+// instance of
+function House(numBedrooms) {
+    this.numBedrooms = numBedrooms;
+}
+
+let myHouse = new House(43);
+
+console.log(myHouse instanceof House);
+
+function Bird(name) {
+    this.name = name;
+    this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+for (let property in canary) {
+    if (canary.hasOwnProperty(property)) {
+        ownProps.push(property);
+    }
+}
+console.log(ownProps);
