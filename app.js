@@ -1,3 +1,9 @@
+/*
+this file is not an application but a collection of exercises, 
+the variable names are deliberately duplicated to respect the 
+succession of FreeCodeCamp exercises
+*/
+
 let dog = {
     name: "Spot",
     numLegs: 4,
@@ -79,3 +85,22 @@ Dog.prototype.numLegs = 4;
 
 let beagle = new Dog("Snoopy");
 console.log(beagle.numLegs);
+
+function Dog(name) {
+    this.name = name;
+  }
+  
+  Dog.prototype.numLegs = 4;
+  
+  let beagle = new Dog("Snoopy");
+  
+  let ownProps = [];
+  let prototypeProps = [];
+  
+  for(let property in beagle){
+    if(beagle.hasOwnProperty(property)){
+      ownProps.push(property);
+    }else{
+      prototypeProps.push(property);
+    }
+  }
