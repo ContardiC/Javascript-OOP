@@ -65,3 +65,17 @@ for (let property in canary) {
     }
 }
 console.log(ownProps);
+
+/*
+Dog.prototype.numLegs = 4;
+Ora tutte le istanze di Dog hanno la proprietà numLegs.
+*/
+
+function Dog(name) {
+    this.name = name;
+}
+Dog.prototype.numLegs = 4;
+
+
+let beagle = new Dog("Snoopy");
+console.log(beagle.numLegs);
